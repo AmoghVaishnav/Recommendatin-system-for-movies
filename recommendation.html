@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Recommender</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;
+    }
+
+    #search-container {
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    #search-form {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    #search-input {
+      padding: 10px;
+      width: 500px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      font-size: 16px;
+      outline: none;
+    }
+
+
+    #movie-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .movie-card {
+      width: 500px;
+      margin-right: 50px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .movie-card h2 {
+      margin: 20px;
+      font-size: 24px;
+    }
+
+    .movie-card p {
+      margin: 0 20px 20px;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .cast-list {
+      margin: 0 20px 20px;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .recommended-movies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .recommended-movie {
+      width: 300px;
+      margin: 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+
+    .recommended-movie img {
+      width: 100%;
+      height: auto;
+    }
+
+    .recommended-movie h3 {
+      margin: 20px;
+      font-size: 18px;
+    }
+
+    .recommended-movie p {
+      margin: 0 20px 20px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div id="search-container">
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Search for a movie...">
+      <button type="submit" id="search-button">Search</button>
+    </form>
+    <div id="movie-container"></div>
+    <div class="recommended-movies">
+      <!-- Recommended movies will be added here dynamically using JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('search-input');
+    const movieContainer = document.getElementById('movie-container');
+
+    searchForm.addEventListener('submit', event => {
